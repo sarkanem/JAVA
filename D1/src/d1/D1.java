@@ -62,12 +62,19 @@ public class D1 {
         
         switch(a){
             case 1:
+            {
                 //kas notiek
                 break;
+            }
             case 2:
+            {
                 break;
+            }
             default:
+            {
                 break;
+                
+            }
         }
     }
     
@@ -130,7 +137,7 @@ public class D1 {
         int paroleSK = paroleIevade.length();
         
         
-        if (paroleSK < 3 || paroleSK > 13 )
+        if (paroleSK < 5 || paroleSK > 10 )
         {
             System.out.println("Parole ir nepareiza garuma");                
         }
@@ -142,6 +149,7 @@ public class D1 {
         {
              System.out.println("Parole nesakrīt");   
         }
+                        
     }   
     
     
