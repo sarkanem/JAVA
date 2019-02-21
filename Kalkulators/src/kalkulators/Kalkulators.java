@@ -26,56 +26,48 @@ public class Kalkulators {
         double a = 0;
         double b = 0;
         
-        if(izvele == 1 || izvele == 2 || izvele == 3 || izvele == 4 || izvele == 5)
-        {
+        if (izvele == 1 || izvele == 2 || izvele == 3 || izvele == 4 || izvele == 5) {
             System.out.println("Ievadi pirmo skaitli:");
-            a =  sc.nextInt(); 
+            a = sc.nextInt();
             System.out.println("Ievadi otro skaitli:");
-            b = sc.nextInt();    
-        }
-        else if (izvele!=0){
+            b = sc.nextInt();
+        } else if (izvele != 0) {
             System.out.println("Tu ievadīji nepareizu darbību!");
-        }
-        else{
+        } else {
+            System.out.println("Paldies");
             break;
         }
         
-           switch(izvele){
-                case 1:
-                {           
-                    System.out.println("Rezultāts ir " + saskaitisana(a,b));
+            switch (izvele) {
+                case 1: {
+                    System.out.println("Rezultāts ir " + saskaitisana(a, b));
                     break;
                 }
-                case 2:
-                {                             
-                    System.out.println("Rezultāts ir " + atnemsana(a,b));
-                    break;                
+                case 2: {
+                    System.out.println("Rezultāts ir " + atnemsana(a, b));
+                    break;
                 }
-                case 3:
-                {                      
-                    System.out.println("Rezultāts ir " + dalisana(a,b));
-                    break;                
+                case 3: {
+                    System.out.println("Rezultāts ir " + dalisana(a, b));
+                    break;
                 }
-                case 4:
-                {                                  
-                    System.out.println("Rezultāts ir " + reizinasana(a,b));
-                    break;                
+                case 4: {
+                    System.out.println("Rezultāts ir " + reizinasana(a, b));
+                    break;
                 }
-                case 5:
-                {                                     
-                    System.out.println("Rezultāts ir " + kapinasana(a,b));
-                    break;                
-                } 
+                case 5: {
+                    System.out.println("Rezultāts ir " + kapinasana(a, b));
+                    break;
+                }
             }
-        }  
-        
+        }          
     }    
     
     private static double saskaitisana(double a, double b){
         double  result = 0;
-        
+
         result = a+b;
-        
+
         return result;
     }
     
