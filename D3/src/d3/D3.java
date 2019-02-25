@@ -97,6 +97,14 @@ public class D3 {
         return result;
     }
     
+      private static void klase(){
+
+          JaunaKlase jaunaKlase = new JaunaKlase();
+          
+          
+    }
+    
+    
     
     
     
