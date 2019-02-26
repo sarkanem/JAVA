@@ -91,7 +91,7 @@ public class Masivi {
         }    
     }
 
-    public void saraksts() {
+    public void saraksts() {   
         List<Integer> skaitluSaraksts = new ArrayList<>(); // jāraksta pilns Integer  tad spiez alt+Enter // listi ērtāki par masīviem, jo nav jādefinē garums
 
         skaitluSaraksts.add(2); // indekss 0
@@ -102,10 +102,23 @@ public class Masivi {
             System.out.println(skaitluSaraksts.get(i));
         }
          
+        //izņemt vērtību
         skaitluSaraksts.remove(0);
-
+        
+        // izvadīt sarakstu
         for (int i = 0; i < skaitluSaraksts.size(); i++) {
             System.out.println(skaitluSaraksts.get(i));
+        }
+        
+        // vai arī šādi pierakstīt:
+        for (int sk : skaitluSaraksts) {
+            System.out.println(sk);
+        }
+        
+        //lai lietotājs var ievadīt vērtības sarakstā
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i<5; i++) {
+            skaitluSaraksts.add(sc.nextInt());
         }
 
     }
