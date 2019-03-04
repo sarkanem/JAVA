@@ -24,6 +24,10 @@ public class Piemeri extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         izvadesLauks = new javax.swing.JLabel();
         Poga = new javax.swing.JButton();
+        TextField1 = new javax.swing.JTextField();
+        TextField2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(700, 700));
@@ -33,35 +37,59 @@ public class Piemeri extends javax.swing.JFrame {
         izvadesLauks.setText("0");
 
         Poga.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        Poga.setText("SASKAITĪT");
+        Poga.setToolTipText("");
         Poga.setActionCommand("POGA");
-        Poga.setLabel("POGA");
         Poga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PogaActionPerformed(evt);
             }
         });
 
+        TextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        TextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Ievadi pirmo skaitli");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Ievadi otro skaitli");
+        jLabel2.setToolTipText("");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(izvadesLauks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(383, Short.MAX_VALUE)
-                .addComponent(Poga)
+                .addContainerGap(142, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TextField1)
+                    .addComponent(Poga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(izvadesLauks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TextField2))
                 .addGap(369, 369, 369))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(izvadesLauks, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(124, 124, 124)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addComponent(izvadesLauks, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(Poga)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -71,26 +99,41 @@ public class Piemeri extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void PogaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PogaActionPerformed
-       String teksts = izvadesLauks.getText();
-       int skaitlis = Integer.valueOf(teksts); // valueOf konvertē
-       skaitlis++;
-       teksts = String.valueOf(skaitlis);
-       izvadesLauks.setText(teksts);
-       Poga.setText("+1");
+//       String teksts = izvadesLauks.getText();
+//       String pirmais = TextField1.getText();
+//       String otrais = TextField2.getText();
+//       int skaitlis = Integer.valueOf(pirmais) + Integer.valueOf(otrais) ; // valueOf konvertē
+//       teksts = String.valueOf(skaitlis);
+//       izvadesLauks.setText(teksts);
+//       Poga.setText("Rezultāts");
+       
+       
+       // vai arī
+       // int a = Integer.valueOf(TextField1.getText());
+       // int b = Integer.valueOf(TextField2.getText());
+       // izvadesLauks.setText(String.valueOf(a+b));
+       
+       // izvadīt error, ja ievada ko citu kā ciparu
+       try{
+           int a = Integer.valueOf(TextField1.getText());
+           int b = Integer.valueOf(TextField2.getText());
+           izvadesLauks.setText(String.valueOf(a + b));
+       }catch(NumberFormatException ex){
+           izvadesLauks.setText(String.valueOf("Error"));       }
     }//GEN-LAST:event_PogaActionPerformed
 
     /**
@@ -130,7 +173,11 @@ public class Piemeri extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Poga;
+    private javax.swing.JTextField TextField1;
+    private javax.swing.JTextField TextField2;
     private javax.swing.JLabel izvadesLauks;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
