@@ -1,18 +1,22 @@
+
+import javax.swing.JButton;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 public class TicTacToe extends javax.swing.JFrame {
 
     boolean player = false;
+    int counter = 0;
 
     /**
      * Creates new form TicTacToe
      */
     public TicTacToe() {
         initComponents();
+
     }
 
     /**
@@ -150,72 +154,78 @@ public class TicTacToe extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-
-        if (player == true) {
-            btn1.setText("X");
-        } else {
-            btn1.setText("O");
-        }
-        btn1.setEnabled(false);
-        player = !player; // lai nomainītu spēlētāju
-
+        clicked(btn1);
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-
-        if (player == true) {
-            btn2.setText("X");
-        } else {
-            btn2.setText("O");
-        }
-        btn2.setEnabled(false);
-        player = !player;
+        clicked(btn2);
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-
-        if (player == true) {
-            btn3.setText("X");
-        } else {
-            btn3.setText("O");
-        }
-        btn3.setEnabled(false);
-        player = !player;
+        clicked(btn3);
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-        btn4.setEnabled(false);
+        clicked(btn4);
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        btn5.setEnabled(false);
+        clicked(btn5);
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        btn6.setEnabled(false);
+        clicked(btn6);
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        btn7.setEnabled(false);
+        clicked(btn7);
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-
-        btn8.setEnabled(false);
-        player = !player;
+        clicked(btn8);
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        btn9.setEnabled(false);
+        clicked(btn9);
     }//GEN-LAST:event_btn9ActionPerformed
 
-    public void clicked(){
-          if (player == true) {
-            btn3.setText("X");
+    public void clicked(JButton btn) {
+        if (player == true) {
+            btn.setText("X");
         } else {
-            btn3.setText("O");
+            btn.setText("O");
         }
+        counter += 1;
+        evaluate();
+        btn.setEnabled(false);
+        player = !player;
+
     }
+
+    public void evaluate() {
+
+        if (!btn1.getText().equals("") && btn1.getText().equals(btn2.getText()) && btn1.getText().equals(btn3.getText())) {
+            Nosaukums.setText(btn1.getText() + " - Tu esi uzvarējis!");
+        } else if (!btn4.getText().equals("") && btn4.getText().equals(btn5.getText()) && btn4.getText().equals(btn6.getText())) {
+            Nosaukums.setText(btn4.getText() + " - Tu esi uzvarējis!");
+        } else if (!btn7.getText().equals("") && btn7.getText().equals(btn8.getText()) && btn7.getText().equals(btn9.getText())) {
+            Nosaukums.setText(btn7.getText() + " - Tu esi uzvarējis!");
+        } else if (!btn1.getText().equals("") && btn1.getText().equals(btn5.getText()) && btn1.getText().equals(btn9.getText())) {
+            Nosaukums.setText(btn1.getText() + " - Tu esi uzvarējis!");
+        } else if (!btn3.getText().equals("") && btn3.getText().equals(btn5.getText()) && btn3.getText().equals(btn7.getText())) {
+            Nosaukums.setText(btn3.getText() + " - Tu esi uzvarējis!");
+        } else if (!btn1.getText().equals("") && btn1.getText().equals(btn4.getText()) && btn1.getText().equals(btn7.getText())) {
+            Nosaukums.setText(btn1.getText() + " - Tu esi uzvarējis!");
+        } else if (!btn2.getText().equals("") && btn2.getText().equals(btn5.getText()) && btn2.getText().equals(btn8.getText())) {
+            Nosaukums.setText(btn2.getText() + " - Tu esi uzvarējis!");
+        } else if (!btn3.getText().equals("") && btn3.getText().equals(btn6.getText()) && btn3.getText().equals(btn9.getText())) {
+            Nosaukums.setText(btn3.getText() + " - Tu esi uzvarējis!");
+        } else if (counter > 8) {
+            Nosaukums.setText("Ir neizšķirts!");
+        }
+
+    }
+
     /**
      * @param args the command line arguments
      */
